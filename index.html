@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoltEdge | أثاث وديكور فاخر - مصر</title>
+    <meta name="description" content="متجر فولت إيدج للأثاث والديكور العصري الفاخر في مصر - أناقة بسيطة في كل قطعة مع دعم الدفع عند الاستلام، فودافون كاش، وإنستاباي." />
+    
+    <!-- OpenGraph & Social Sharing Cards -->
+    <meta property="og:title" content="VoltEdge | أثاث وديكور فاخر - مصر" />
+    <meta property="og:description" content="أناقة بسيطة: اكتشف الأناقة في كل قطعة. تسوق تشكيلة الأثاث والديكور الفاخرة لعام 2026 بتوصيل سريع لكافة المحافظات." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#F8F3EA" />
+
+    <!-- Google Fonts: Cairo, Tajawal & Cinzel (Luxury Brand Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Compiled CSS (Ready to use immediately on GitHub Pages) -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- 1. Outer Frame Container (Glassy / Centered Minimalist Shell) -->
+    <div class="store-outer-frame">
+      
+      <!-- 2. Navbar (Rounded top, cream background, serif brand, RTL links) -->
+      <header class="site-header" role="banner">
+        <div class="header-container">
+          <!-- Brand Logo Text (Serif Gold-Brown) -->
+          <a href="#" class="brand-logo" aria-label="VoltEdge الصفحة الرئيسية">
+            <span class="brand-wordmark">VoltEdge</span>
+          </a>
+
+          <!-- Navigation Links (Furniture Categories in RTL order) -->
+          <nav class="desktop-nav" aria-label="القائمة الرئيسية">
+            <a href="#" class="nav-link active" data-category="all">الرئيسية</a>
+            <a href="#products" class="nav-link" data-category="أنتريهات">أنتريهات</a>
+            <a href="#products" class="nav-link" data-category="غرف نوم">غرف نوم</a>
+            <a href="#products" class="nav-link" data-category="مكاتب">مكاتب</a>
+            <a href="#products" class="nav-link" data-category="نيش وبوفيه">نيش وبوفيه</a>
+            <a href="#products" class="nav-link" data-category="كراسي">كراسي وفوتيه</a>
+            <a href="#products" class="nav-link" data-category="غرف أطفال">غرف أطفال</a>
+          </nav>
+
+          <!-- Header Actions: Cart Button & Mobile Hamburger -->
+          <div class="header-actions">
+            <button type="button" class="cart-toggle-btn" aria-label="عرض سلة المشتريات">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              <span class="cart-badge-count" aria-live="polite">0</span>
+            </button>
+
+            <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="فتح القائمة" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <nav class="mobile-nav-menu" id="mobileNavMenu" aria-label="قائمة الهاتف">
+          <ul class="mobile-nav-list">
+            <li><a href="#" class="mobile-nav-link" data-category="all">الرئيسية</a></li>
+            <li><a href="#products" class="mobile-nav-link" data-category="أنتريهات">أنتريهات وركنات</a></li>
+            <li><a href="#products" class="mobile-nav-link" data-category="غرف نوم">غرف نوم ماستر</a></li>
+            <li><a href="#products" class="mobile-nav-link" data-category="مكاتب">مكاتب عملية</a></li>
+            <li><a href="#products" class="mobile-nav-link" data-category="نيش وبوفيه">نيش وبوفيه</a></li>
+            <li><a href="#products" class="mobile-nav-link" data-category="كراسي">كراسي وفوتيهات</a></li>
+            <li><a href="#products" class="mobile-nav-link" data-category="غرف أطفال">غرف أطفال</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main Content Area -->
+      <main id="mainContent">
+        
+        <!-- 3. Hero Section (Furniture Living Suite background + RTL text block) -->
+        <section class="hero-section" aria-label="مقدمة متجر الأثاث">
+          <div class="hero-content-container">
+            <div class="hero-text-block fade-in-up visible">
+              <span class="hero-kicker">معرض VoltEdge للأثاث العصري 2026</span>
+              <h1 class="hero-h1">أثاث راقٍ: اكتشف</h1>
+              <h2 class="hero-h2">الفخامة والراحة في كل قطعة</h2>
+              <p class="hero-paragraph">أنتريهات مودرن، غرف نوم ماستر، مكاتب، نيش، وغرف أطفال مصنعة من أخشاب الزان الطبيعي بأعلى معايير الحرفية المصرية.</p>
+              
+              <a href="#products" class="hero-cta-btn">
+                <span>تصفح قطع الأثاث</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Product Cards Row (Overlapping the bottom of hero) -->
+        <section class="products-section" id="products" aria-label="كتالوج الأثاث">
+          <div class="content-wrapper">
+            <!-- Furniture Category Filter Tabs -->
+            <div class="category-filter-wrap" id="categoryFilterTabs" role="tablist" aria-label="أقسام الأثاث"></div>
+
+            <div class="products-grid" id="productsGrid">
+              <!-- Dynamically populated via js/products.js & js/main.js -->
+              <noscript>
+                <div style="grid-column: 1 / -1; padding: 24px; text-align: center; background: #FAF6EE; border-radius: 14px;">
+                  يرجى تفعيل الجافاسكربت لتصفح منتجات الأثاث.
+                </div>
+              </noscript>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 5. Footer Strip (Pedestal graphic + Egyptian payment badges) -->
+      <footer class="site-footer" id="about" role="contentinfo">
+        <!-- Concrete Pedestal Graphic with VoltEdge Brand Logo -->
+        <div class="pedestal-graphic-wrap">
+          <div class="pedestal-shelf">
+            <div class="pedestal-brand-lockup">
+              <span class="brand-text">VoltEdge</span>
+              <span class="brand-sub">LUXURY INTERIORS · CAIRO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-strip">
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>حرفية يدوية مصرية فائقة الدقة</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <span>شحن سريع لجميع محافظات جمهورية مصر</span>
+          </div>
+          <div class="trust-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+            <span>معاينة المنتجات وفحصها قبل السداد</span>
+          </div>
+        </div>
+
+        <!-- Payment Methods Row (Egypt: COD, Vodafone Cash, InstaPay, Visa, Mastercard) -->
+        <div class="payment-methods-strip">
+          <div class="payment-title">طرق الدفع المعتمدة في مصر</div>
+          <div class="payment-badges-row">
+            <!-- 1. Cash on Delivery -->
+            <div class="payment-badge" title="الدفع نقداً عند استلام الشحنة">
+              <span class="badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <path d="M6 12h.01M18 12h.01"></path>
+                </svg>
+              </span>
+              <span>الدفع عند الاستلام</span>
+            </div>
+
+            <!-- 2. Vodafone Cash -->
+            <div class="payment-badge" title="التحويل عبر محفظة فودافون كاش">
+              <span class="badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v12M8 10l4-4 4 4"></path>
+                </svg>
+              </span>
+              <span>فودافون كاش</span>
+            </div>
+
+            <!-- 3. InstaPay -->
+            <div class="payment-badge" title="التحويل اللحظي عبر تطبيق إنستاباي مصر">
+              <span class="badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </span>
+              <span>انستا باي</span>
+            </div>
+
+            <!-- 4. Visa -->
+            <div class="payment-badge" title="بطاقات فيزا">
+              <span class="badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </span>
+              <span>Visa</span>
+            </div>
+
+            <!-- 5. Mastercard -->
+            <div class="payment-badge" title="بطاقات ماستركارد">
+              <span class="badge-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="12" r="6"></circle>
+                  <circle cx="15" cy="12" r="6"></circle>
+                </svg>
+              </span>
+              <span>Mastercard</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer-copyright">
+          © 2026 متجر VoltEdge الفاخر للأثاث والديكور. جميع الحقوق محفوظة جمهورية مصر العربية.
+        </p>
+      </footer>
+
+    </div>
+
+    <!-- =======================================================================
+         SLIDE-IN CART DRAWER & OVERLAY
+         ======================================================================= -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="سلة التسوق">
+      <div class="cart-drawer-header">
+        <div class="cart-title-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <h3>سلة المشتريات</h3>
+        </div>
+        <button type="button" class="drawer-close-btn" id="cartDrawerClose" aria-label="إغلاق السلة">✕</button>
+      </div>
+
+      <!-- Empty State -->
+      <div class="cart-empty-state" id="cartDrawerEmpty">
+        <div class="empty-icon-wrap">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </div>
+        <h4>سلتك فارغة حالياً</h4>
+        <p>اكتشف تشكيلة الأثاث والديكور الفاخرة وأضف لمسات الجمال لمنزلك</p>
+        <button type="button" class="browse-btn" onclick="closeCartDrawer()">تصفح المنتجات</button>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-drawer-body" id="cartDrawerItems"></div>
+
+      <!-- Footer / Proceed to Checkout -->
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
+        <div class="cart-summary-row">
+          <span class="summary-label">المجموع الفرعي:</span>
+          <span class="summary-value" id="cartDrawerSubtotal">0 ج.م</span>
+        </div>
+        <div class="shipping-calc-note">
+          * يتم احتساب مصاريف الشحن بدقة حسب المحافظة في الخطوة التالية
+        </div>
+        <button type="button" class="checkout-btn" id="proceedToCheckoutBtn">
+          <span>إتمام الطلب</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         CHECKOUT MODAL / BOTTOM SHEET
+         ======================================================================= -->
+    <div class="checkout-overlay" id="checkoutOverlay"></div>
+    <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="إتمام الطلب">
+      <div class="checkout-header">
+        <h3>إتمام الطلب والشحن</h3>
+        <button type="button" class="modal-close-btn" id="checkoutCloseBtn" aria-label="إغلاق نافذة الدفع">✕</button>
+      </div>
+
+      <form id="checkoutForm" class="checkout-body">
+        
+        <!-- Customer Details Section -->
+        <div class="checkout-section">
+          <h4 class="section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>بيانات العميل والشحن</span>
+          </h4>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="checkoutName">الاسم الكامل <span class="req">*</span></label>
+              <input type="text" id="checkoutName" required placeholder="مثال: أحمد محمد علي" autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="checkoutPhone">رقم الموبايل المصري <span class="req">*</span></label>
+              <input type="tel" id="checkoutPhone" required placeholder="010XXXXXXXX أو 011/012/015" dir="ltr" style="text-align: right;" autocomplete="tel" />
+              <span class="field-hint">11 رقماً يبدأ بـ 010 أو 011 أو 012 أو 015</span>
+            </div>
+
+            <div class="form-group">
+              <label for="checkoutGovSelect">المحافظة <span class="req">*</span></label>
+              <select id="checkoutGovSelect" required>
+                <!-- Populated dynamically with all 27 governorates -->
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="checkoutAddress">العنوان بالتفصيل <span class="req">*</span></label>
+              <input type="text" id="checkoutAddress" required placeholder="المنطقة، اسم الشارع، رقم العقار، الدور، الشقة" autocomplete="street-address" />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="checkoutNotes">ملاحظات التوصيل (اختياري)</label>
+              <textarea id="checkoutNotes" placeholder="أي تفاصيل إضافية لتسهيل وصول مندوب التوصيل"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Method Section -->
+        <div class="checkout-section">
+          <h4 class="section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+            <span>اختر طريقة الدفع</span>
+          </h4>
+
+          <div class="payment-options-grid">
+            <!-- 1. COD (Default) -->
+            <label class="payment-option-card">
+              <input type="radio" name="payment_method" value="cod" checked />
+              <div class="payment-label-wrap">
+                <span class="method-name">الدفع عند الاستلام (Cash on Delivery)</span>
+                <span class="method-badge">مُوصى به</span>
+              </div>
+            </label>
+
+            <!-- 2. Vodafone Cash -->
+            <label class="payment-option-card">
+              <input type="radio" name="payment_method" value="vodafone_cash" />
+              <div class="payment-label-wrap">
+                <span class="method-name">فودافون كاش (Vodafone Cash)</span>
+                <span class="method-badge">تحويل فوري</span>
+              </div>
+            </label>
+            <div id="vodafoneCashDetails" class="wallet-instructions-card" style="display: none;">
+              <div class="wallet-header">رقم محفظة فودافون كاش للمتجر:</div>
+              <div class="wallet-number-row">
+                <span class="wallet-target" id="vfCashNumDisplay">01012345678</span>
+                <button type="button" class="copy-btn" onclick="copyToClipboard('01012345678', this)">نسخ الرقم</button>
+              </div>
+              <p class="wallet-note">يرجى تحويل إجمالي المبلغ على الرقم أعلاه ثم إرسال لقطة شاشة (إيصال التحويل) عبر واتساب لتأكيد الشحن فوراً.</p>
+            </div>
+
+            <!-- 3. InstaPay -->
+            <label class="payment-option-card">
+              <input type="radio" name="payment_method" value="instapay" />
+              <div class="payment-label-wrap">
+                <span class="method-name">انستا باي (InstaPay)</span>
+                <span class="method-badge">تحويل بنكي لحظي</span>
+              </div>
+            </label>
+            <div id="instapayDetails" class="wallet-instructions-card" style="display: none;">
+              <div class="wallet-header">عنوان إنستاباي (IPA) للمتجر:</div>
+              <div class="wallet-number-row">
+                <span class="wallet-target" id="instaPayAddressDisplay">voltedge@instapay</span>
+                <button type="button" class="copy-btn" onclick="copyToClipboard('voltedge@instapay', this)">نسخ العنوان</button>
+              </div>
+              <p class="wallet-note">يرجى التحويل إلى عنوان إنستاباي الموضح أعلاه ثم إرفاق إيصال التحويل عبر رسالة الواتساب التي ستفتح عند التأكيد.</p>
+            </div>
+
+            <!-- 4. Credit/Debit Cards (Disabled) -->
+            <label class="payment-option-card disabled" title="خدمة الدفع بالبطاقات ستتوفر قريباً">
+              <input type="radio" name="payment_method" value="card" disabled />
+              <div class="payment-label-wrap">
+                <span class="method-name">بطاقة ائتمان (Visa / Mastercard)</span>
+                <span class="method-badge coming-soon">قريباً</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Order Summary Breakdown -->
+        <div class="checkout-section">
+          <h4 class="section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A6B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>ملخص الحساب</span>
+          </h4>
+
+          <div class="order-breakdown-card">
+            <div class="breakdown-row">
+              <span>عدد المنتجات:</span>
+              <span id="checkoutItemsCount">0 قطع</span>
+            </div>
+            <div class="breakdown-row">
+              <span>المجموع الفرعي:</span>
+              <span id="checkoutSubtotal">0 ج.م</span>
+            </div>
+            <div class="breakdown-row">
+              <span>مصاريف الشحن:</span>
+              <span id="checkoutShipping">50 ج.م</span>
+            </div>
+            <div class="breakdown-row total-row">
+              <span>الإجمالي المطلوب:</span>
+              <span id="checkoutTotal">0 ج.م</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Message Display -->
+        <div id="checkoutErrorMessage" class="checkout-error"></div>
+
+        <!-- Submit Button -->
+        <div class="checkout-footer">
+          <button type="submit" class="confirm-order-btn">
+            <span>تأكيد الطلب وإرساله عبر واتساب</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- =======================================================================
+         ORDER SUCCESS CONFIRMATION MODAL
+         ======================================================================= -->
+    <div class="order-success-overlay" id="orderSuccessOverlay"></div>
+    <div class="order-success-modal" id="orderSuccessModal" role="dialog" aria-modal="true" aria-label="تم استلام الطلب">
+      <div class="success-icon-wrap">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h3>تم استلام طلبك بنجاح!</h3>
+      <p>شكراً لثقتك في متجر VoltEdge. تم إعداد بيانات طلبك بنجاح وسيتواصل معك فريق خدمة العملاء لتأكيد موعد التوصيل.</p>
+
+      <div class="success-details-box">
+        <div class="detail-item">
+          <span>رقم الطلب:</span>
+          <span id="successOrderId">#VE-00000</span>
+        </div>
+        <div class="detail-item">
+          <span>الاسم والموبايل:</span>
+          <span id="successCustomer">-</span>
+        </div>
+        <div class="detail-item">
+          <span>العنوان والمحافظة:</span>
+          <span id="successAddress">-</span>
+        </div>
+        <div class="detail-item">
+          <span>طريقة الدفع:</span>
+          <span id="successPayment">الدفع عند الاستلام</span>
+        </div>
+        <div class="detail-item">
+          <span>الإجمالي النهائي:</span>
+          <span id="successTotal" style="color: #6B4A2B; font-weight: 800;">-</span>
+        </div>
+      </div>
+
+      <div class="success-actions">
+        <a id="successWhatsAppBtn" href="#" target="_blank" class="whatsapp-reopen-btn" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>فتح محادثة واتساب لمتابعة الطلب</span>
+        </a>
+        <button type="button" class="continue-btn" id="successContinueShoppingBtn">متابعة التسوق</button>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         JAVASCRIPT MODULES & SCRIPTS (Pure Vanilla ES6+)
+         ======================================================================= -->
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

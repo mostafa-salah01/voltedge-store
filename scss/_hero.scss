@@ -1,0 +1,145 @@
+// =============================================================================
+// VoltEdge - Hero Section
+// =============================================================================
+
+.hero-section {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  background-color: #EFE7DC;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @media (max-width: #{$breakpoint-tablet}) {
+    min-height: 480px;
+    background-position: 65% center;
+  }
+
+  // Soft Ambient Scrim Overlay for Crystal-Clear Arabic Typography on natural photo
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to left,
+      rgba(248, 243, 234, 0.94) 0%,
+      rgba(248, 243, 234, 0.85) 45%,
+      rgba(248, 243, 234, 0.25) 75%,
+      rgba(248, 243, 234, 0.08) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+
+    @media (max-width: #{$breakpoint-tablet}) {
+      background: linear-gradient(
+        to bottom,
+        rgba(248, 243, 234, 0.85) 0%,
+        rgba(248, 243, 234, 0.95) 100%
+      );
+    }
+  }
+
+  .hero-content-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 64px 36px 140px; // Generous bottom padding so cards can overlap seamlessly
+
+    @media (max-width: #{$breakpoint-tablet}) {
+      padding: 48px 20px 80px;
+    }
+  }
+
+  // RTL Text Block positioned on right side
+  .hero-text-block {
+    max-width: 540px;
+    margin-inline-start: 0; // Aligns right in RTL
+
+    .hero-kicker {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: $color-gold-dark;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .hero-h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: $color-heading;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.35;
+      color: #382A1D;
+      margin-bottom: 18px;
+    }
+
+    .hero-paragraph {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: $color-text-body;
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+
+    // Hero CTA Button (Pill shape, gold gradient, soft glow, hover lift)
+    .hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 34px;
+      border-radius: $radius-pill;
+      background: $color-gold-gradient;
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: $shadow-glow;
+      transition: all #{$transition-base};
+
+      svg {
+        width: 18px;
+        height: 18px;
+        transition: transform #{$transition-fast};
+      }
+
+      &:hover {
+        background: $color-gold-gradient-hover;
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -4px rgba(198, 154, 91, 0.45);
+
+        svg {
+          transform: translateX(-4px); // moves left in RTL
+        }
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Fade in up animation class
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

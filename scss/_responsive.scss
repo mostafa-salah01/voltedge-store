@@ -1,0 +1,101 @@
+// =============================================================================
+// VoltEdge - Responsive Breakpoint Rules
+// =============================================================================
+
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: 460px;
+    background-position: 70% center;
+
+    .hero-content-container {
+      padding: 48px 24px 100px;
+    }
+
+    .hero-text-block {
+      max-width: 100%;
+    }
+  }
+
+  .products-section {
+    margin-top: -50px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 8px 6px;
+  }
+
+  .store-outer-frame {
+    border-radius: 16px;
+  }
+
+  .hero-section {
+    min-height: 420px;
+
+    .hero-content-container {
+      padding: 36px 16px 70px;
+    }
+
+    .hero-text-block {
+      .hero-h1 {
+        font-size: 1.85rem;
+      }
+      .hero-h2 {
+        font-size: 1.35rem;
+      }
+      .hero-paragraph {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .products-section {
+    margin-top: -30px;
+    padding-bottom: 36px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .product-card {
+    .product-image-wrapper {
+      aspect-ratio: 16 / 10;
+    }
+  }
+
+  .site-footer {
+    padding: 36px 16px 24px;
+
+    .trust-strip {
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+      padding-inline: 8px;
+    }
+
+    .payment-badges-row {
+      gap: 8px;
+
+      .payment-badge {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+      }
+    }
+  }
+}

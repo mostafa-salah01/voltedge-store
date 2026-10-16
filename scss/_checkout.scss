@@ -1,0 +1,526 @@
+// =============================================================================
+// VoltEdge - Checkout Modal, Egyptian Payment Methods & Order Confirmation
+// =============================================================================
+
+// Checkout Modal Overlay
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 22, 14, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 120;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-base, visibility $transition-base;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Checkout Modal Window
+.checkout-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%) scale(0.97);
+  width: 94%;
+  max-width: 680px;
+  max-height: 90vh;
+  background-color: #FAF6EE;
+  border-radius: $radius-xl;
+  box-shadow: 0 25px 60px rgba(45, 30, 15, 0.35);
+  border: 1px solid rgba(154, 107, 60, 0.2);
+  z-index: 130;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  @media (max-width: #{$breakpoint-tablet}) {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: $radius-xl $radius-xl 0 0;
+    transform: translateY(100%);
+
+    &.active {
+      transform: translateY(0);
+    }
+  }
+
+  // Header
+  .checkout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(154, 107, 60, 0.12);
+    background-color: #FFFFFF;
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $color-heading;
+    }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: $color-cream-mid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-text-muted;
+      transition: all $transition-fast;
+
+      &:hover {
+        background: #ECE5DA;
+        color: $color-heading;
+      }
+    }
+  }
+
+  // Scrollable Body
+  .checkout-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (max-width: #{$breakpoint-tablet}) {
+      padding: 18px 20px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(154, 107, 60, 0.2);
+      border-radius: 4px;
+    }
+  }
+
+  // Form Section Container
+  .checkout-section {
+    background: #FFFFFF;
+    border-radius: $radius-md;
+    padding: 20px;
+    border: 1px solid rgba(154, 107, 60, 0.12);
+    box-shadow: $shadow-sm;
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: $color-heading;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  // Form Grid
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: #{$breakpoint-tablet}) {
+      grid-template-columns: 1fr;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: $color-text-main;
+
+      .req {
+        color: $color-error;
+        margin-inline-start: 4px;
+      }
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: $radius-sm;
+      border: 1px solid rgba(154, 107, 60, 0.2);
+      background-color: #FAF8F5;
+      color: $color-text-main;
+      transition: border-color $transition-fast, box-shadow $transition-fast;
+
+      &:focus {
+        border-color: $color-gold-dark;
+        box-shadow: 0 0 0 3px rgba(198, 154, 91, 0.18);
+        background-color: #FFFFFF;
+      }
+
+      &::placeholder {
+        color: $color-text-subtle;
+        font-size: 0.88rem;
+      }
+    }
+
+    select {
+      cursor: pointer;
+      appearance: auto;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .field-hint {
+      font-size: 0.75rem;
+      color: $color-text-muted;
+    }
+  }
+
+  // Payment Selector Options
+  .payment-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .payment-option-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: $radius-sm;
+      border: 1px solid rgba(154, 107, 60, 0.16);
+      background: #FAF8F5;
+      cursor: pointer;
+      transition: all $transition-fast;
+
+      &:hover {
+        border-color: $color-gold-light;
+        background: #FFFDF9;
+      }
+
+      input[type="radio"] {
+        accent-color: $color-gold-dark;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .payment-label-wrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .method-name {
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: $color-heading;
+        }
+
+        .method-badge {
+          font-size: 0.72rem;
+          font-weight: 600;
+          padding: 2px 8px;
+          border-radius: $radius-pill;
+          background: rgba(154, 107, 60, 0.1);
+          color: $color-gold-dark;
+
+          &.coming-soon {
+            background: rgba(120, 113, 108, 0.12);
+            color: $color-text-muted;
+          }
+        }
+      }
+
+      &.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+
+        &:hover {
+          border-color: rgba(154, 107, 60, 0.16);
+          background: #FAF8F5;
+        }
+      }
+    }
+  }
+
+  // Wallet & InstaPay Info Cards
+  .wallet-instructions-card {
+    margin-top: 12px;
+    padding: 14px 16px;
+    border-radius: $radius-sm;
+    background: #FFF8EE;
+    border: 1px solid rgba(198, 154, 91, 0.3);
+
+    .wallet-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $color-heading;
+      margin-bottom: 8px;
+    }
+
+    .wallet-number-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FFFFFF;
+      padding: 8px 12px;
+      border-radius: $radius-xs;
+      border: 1px dashed rgba(154, 107, 60, 0.35);
+      margin-bottom: 8px;
+
+      .wallet-target {
+        font-family: monospace;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: $color-heading;
+        letter-spacing: 0.05em;
+      }
+
+      .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: $color-gold-dark;
+        padding: 4px 10px;
+        border-radius: 4px;
+        background: $color-cream-mid;
+        transition: background $transition-fast;
+
+        &:hover {
+          background: #E8DECة;
+        }
+      }
+    }
+
+    .wallet-note {
+      font-size: 0.8rem;
+      color: $color-text-muted;
+      line-height: 1.5;
+    }
+  }
+
+  // Order Summary Breakdown
+  .order-breakdown-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .breakdown-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      color: $color-text-body;
+
+      &.total-row {
+        border-top: 1px solid rgba(154, 107, 60, 0.16);
+        padding-top: 12px;
+        margin-top: 4px;
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: $color-heading;
+      }
+    }
+  }
+
+  // Error Message
+  .checkout-error {
+    display: none;
+    padding: 10px 14px;
+    border-radius: $radius-sm;
+    background: $color-error-bg;
+    color: $color-error;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid rgba(153, 27, 27, 0.2);
+  }
+
+  // Footer / Submit Button
+  .checkout-footer {
+    padding: 18px 28px;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(154, 107, 60, 0.12);
+
+    .confirm-order-btn {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: $radius-pill;
+      background: $color-gold-gradient;
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: $shadow-glow;
+      transition: all $transition-fast;
+
+      &:hover {
+        background: $color-gold-gradient-hover;
+        box-shadow: 0 12px 26px -4px rgba(198, 154, 91, 0.5);
+      }
+    }
+  }
+}
+
+// Order Success Modal
+.order-success-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 22, 14, 0.65);
+  backdrop-filter: blur(5px);
+  z-index: 140;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-base, visibility $transition-base;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.order-success-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -46%) scale(0.97);
+  width: 90%;
+  max-width: 520px;
+  background-color: #FAF6EE;
+  border-radius: $radius-xl;
+  box-shadow: 0 30px 70px rgba(45, 30, 15, 0.4);
+  border: 1px solid rgba(154, 107, 60, 0.2);
+  z-index: 150;
+  padding: 36px 32px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .success-icon-wrap {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: $color-success-bg;
+    color: $color-success;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 2px solid rgba(63, 98, 18, 0.2);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $color-heading;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $color-text-muted;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .success-details-box {
+    background: #FFFFFF;
+    border-radius: $radius-md;
+    padding: 16px;
+    border: 1px solid rgba(154, 107, 60, 0.14);
+    text-align: right;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      span:first-child {
+        color: $color-text-muted;
+      }
+      span:last-child {
+        font-weight: 700;
+        color: $color-text-main;
+      }
+    }
+  }
+
+  .success-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .whatsapp-reopen-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: $radius-pill;
+      background: #25D366;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+
+      &:hover {
+        background: #20BD5A;
+      }
+    }
+
+    .continue-btn {
+      padding: 12px 24px;
+      border-radius: $radius-pill;
+      background: $color-cream-mid;
+      color: $color-heading;
+      font-weight: 700;
+      transition: background $transition-fast;
+
+      &:hover {
+        background: #ECE4D6;
+      }
+    }
+  }
+}

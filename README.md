@@ -1,11 +1,123 @@
-<div align="center">
+# متجر VoltEdge الفاخر للأثاث والديكور (VoltEdge Luxury E-Commerce)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+موقع تجارة إلكترونية ثابت فائق الدقة (Pixel-Faithful Static Website) مصمم خصيصاً لـ **السوق المصري** بأسلوب الديكور السكندنافي-الياباندي الفاخر (Scandinavian-Japandi Minimalist Interior).
 
-  <h1>Built with AI Studio</h2>
+يعمل الموقع بالكامل كملفات ثابتة بدون أي سيرفر خلفي (Backend) أو مكتبات أو أطر عمل (No Frameworks, No Build Step required)، مما يجعله جاهزاً 100% للاستضافة المجانية الفورية على **GitHub Pages**.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+---
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## 📁 هيكل الملفات (File Structure)
 
-</div>
+```text
+├── index.html               # الصفحة الرئيسية (HTML5 RTL Semantic)
+├── css/
+│   └── style.css            # ملف CSS المجمّع الجاهز للاستخدام الفوري
+├── scss/
+│   ├── main.scss            # الملف الرئيسي لربط ملفات SCSS
+│   ├── _variables.scss      # الألوان، الخطوط، الظلال، وأبعاد التصميم
+│   ├── _base.scss           # التنسيقات الأساسية، إعادة الضبط وإطار الصفحة
+│   ├── _header.scss         # شريط التنقل العلوي والشعار وقائمة الجوال
+│   ├── _hero.scss           # القسم الترويجي الرئيسي والخلفية والخطوط
+│   ├── _products.scss       # بطاقات المنتجات المتراكبة وتأثيرات التحويم
+│   ├── _cart.scss           # درج سلة المشتريات المنزلق والإشعارات
+│   ├── _checkout.scss       # نافذة الدفع والشحن ومحافظ مصر وتأكيد الطلب
+│   ├── _footer.scss         # المنصة الرخامية وشارات طرق الدفع
+│   └── _responsive.scss     # التوافق مع الشاشات (الهواتف، الأجهزة اللوحية، الكمبيوتر)
+├── js/
+│   ├── products.js          # مصفوفة بيانات المنتجات ودالة تنسيق العملة
+│   ├── cart.js              # سلة الشراء، حساب الشحن لمحافظات مصر، وربط واتساب
+│   └── main.js              # تهيئة التفاعل، القوائم المنزلقة، ورصد التمرير
+├── images/
+│   ├── hero.jpg                   # صورة الغلاف لصالون وغرفة معيشة فاخرة
+│   ├── furniture-sofa.jpg         # صورة طقم أنتريه صالون مودرن فاخر
+│   ├── furniture-bedroom.jpg      # صورة غرفة نوم ماستر مودرن متكاملة
+│   ├── furniture-desk.jpg         # صورة مكتب عمل ودراسة تنفيذي من البلوط
+│   ├── furniture-buffet-nish.jpg  # صورة نيش وبوفيه مودرن زجاج فاميه وإضاءة LED
+│   ├── furniture-armchair.jpg     # صورة كرسي فوتيه صالون استرخاء مبطن
+│   ├── furniture-kids-room.jpg    # صورة غرفة نوم أطفال وشباب خشب زان
+│   ├── furniture-dining.jpg       # صورة طاولة سفرة عائلية مع 6 كراسي مبطنة
+│   ├── coffee-table.jpg           # صورة طاولة قهوة صالون دائرية من البلوط
+│   └── pedestal-bg.jpg            # خامة حجر الترافرتين الطبيعي لمنصة الشعار
+└── README.md                      # هذا الملف التوضيحي
+```
+
+---
+
+## ⚙️ تخصيص بيانات المتجر الحقيقية (CONFIG Block)
+
+في أعلى ملف `js/cart.js`، ستجد كائن الإعدادات `STORE_CONFIG`. قم باستبدال البيانات التجريبية ببياناتك الفعلية:
+
+```javascript
+const STORE_CONFIG = {
+  // 1. رقم الواتساب الخاص بالمتجر لاستلام الطلبات (بالصيغة الدولية لمصر بدون علامة +)
+  // مثال: إذا كان رقمك 01012345678، اكتب: "201012345678"
+  WHATSAPP_NUMBER: "201012345678",
+
+  // 2. رقم محفظة فودافون كاش لتحويل العميل
+  VODAFONE_CASH_NUMBER: "01012345678",
+
+  // 3. اسم حساب إنستاباي (IPA Address) أو الرقم المرتبط بحسابك البنكي
+  INSTAPAY_ADDRESS: "voltedge@instapay",
+
+  // 4. تسعيرة مصاريف الشحن بالجنيه المصري (ج.م)
+  SHIPPING_FEES: {
+    CAIRO_GIZA: 50,         // مصاريف الشحن لمحافظتي القاهرة والجيزة
+    OTHER_GOVERNORATES: 80   // مصاريف الشحن لجميع المحافظات المصرية الأخرى
+  },
+
+  // 5. الحد الأدنى للشحن المجاني (اختياري)
+  FREE_SHIPPING_THRESHOLD: 25000
+};
+```
+
+---
+
+## 💳 طرق الدفع المدعومة في مصر (Payment Flow)
+
+1. **الدفع عند الاستلام (Cash on Delivery):** الخيار الافتراضي والمحدد مسبقاً، يتيح للعميل تأكيد طلبه مباشرة مع المعاينة قبل السداد.
+2. **فودافون كاش (Vodafone Cash):** يعرض رقم المحفظة مع زر نسخ بنقرة واحدة وتعليمات إرسال الإيصال.
+3. **انستا باي (InstaPay):** يعرض عنوان الـ IPA مع زر نسخ سريع لتحويل لحظي.
+4. **بطاقات الائتمان (Visa / Mastercard):** خيار معروض بتصميم أنيق وموسوم بـ "قريباً".
+5. **إرسال الطلب عبر واتساب:** عند الضغط على تأكيد الطلب، يتم إنشاء رسالة عربية منسقة ببيانات العميل (الاسم، الموبايل المصري 11 رقماً، المحافظة، العنوان، وطريقة الدفع والمنتجات مع الإجمالي) وتوجيه العميل إلى محادثة واتساب مع المتجر مباشرة.
+
+---
+
+## 🎨 كيفية تعديل وتجميع ملفات SCSS (اختياري)
+
+الموقع يضم بالفعل ملف `css/style.css` مجمّعاً وجاهزاً للعمل مباشرة بدون أي أدوات. إذا أردت إجراء تعديلات على ملفات المصدر في مجلد `scss/` وإعادة تجميعها، يمكنك استخدام Sass مباشرة عبر سطر الأوامر:
+
+```bash
+# تثبيت Sass (إذا لم يكن مثبتاً):
+npm install -g sass
+
+# تجميع الملف مرة واحدة مع ضغط الكود للإنتاج:
+sass scss/main.scss css/style.css --style=compressed
+
+# أو تفعيل المراقبة التلقائية أثناء التعديل (Watch mode):
+sass --watch scss/main.scss:css/style.css
+```
+
+---
+
+## 🚀 خطوات النشر على GitHub Pages (Deployment Steps)
+
+1. أنشئ مستودعاً جديداً (New Repository) على حسابك في GitHub (مثلاً: `voltedge-store`).
+2. ارفع جميع ملفات هذا المجلد إلى المستودع:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit - VoltEdge Egyptian Luxury E-Commerce"
+   git branch -M main
+   git remote add origin https://github.com/USERNAME/voltedge-store.git
+   git push -u origin main
+   ```
+3. افتح صفحة المستودع على GitHub واضغط على تبويب **Settings**.
+4. من القائمة الجانبية اليسرى، اختر **Pages**.
+5. تحت قسم **Build and deployment**:
+   - **Source:** اختر `Deploy from a branch`.
+   - **Branch:** اختر `main` وحدد المجلد `/ (root)`.
+   - اضغط على **Save**.
+6. انتظر دقيقة واحدة، وسيظهر رابط موقعك المباشر في أعلى الصفحة:
+   `https://USERNAME.github.io/voltedge-store/`
+
+الموقع سيعمل على الفور بفضل المسارات النسبية (`./css/style.css`, `./js/...`, `images/...`) بدون أي إعدادات إضافية!

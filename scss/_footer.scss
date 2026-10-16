@@ -1,0 +1,159 @@
+// =============================================================================
+// VoltEdge - Footer Strip, Pedestal Graphic & Egyptian Payment Badges
+// =============================================================================
+
+.site-footer {
+  background-color: #FAF6EE;
+  border-top: 1px solid rgba(154, 107, 60, 0.12);
+  padding: 48px 24px 32px;
+  text-align: center;
+  position: relative;
+
+  // Concrete Pedestal Graphic Container with Natural Stone Photo
+  .pedestal-graphic-wrap {
+    max-width: 680px;
+    margin: 0 auto 36px;
+    perspective: 1000px;
+
+    .pedestal-shelf {
+      position: relative;
+      border-radius: $radius-md;
+      overflow: hidden;
+      background-image: url('../images/pedestal-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 34px 24px 30px;
+      box-shadow: 0 20px 45px -10px rgba(50, 35, 20, 0.28), 0 0 0 1px rgba(154, 107, 60, 0.18);
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(250, 246, 238, 0.88) 0%,
+          rgba(238, 229, 216, 0.93) 100%
+        );
+        backdrop-filter: blur(2px);
+      }
+
+      .pedestal-brand-lockup {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+
+        .brand-text {
+          font-family: var(--font-brand);
+          font-size: clamp(2.2rem, 4.5vw, 3rem);
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          background: linear-gradient(135deg, #6B4A2B 0%, #B6864C 50%, #4A321B 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .brand-sub {
+          font-family: var(--font-arabic);
+          font-size: 0.85rem;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          color: $color-heading;
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+
+  // Guarantees Trust Strip
+  .trust-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(154, 107, 60, 0.1);
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: $color-heading;
+
+      svg {
+        color: $color-gold-dark;
+      }
+    }
+  }
+
+  // Egyptian Payment Methods Row (Muted Gold-Beige Badges)
+  .payment-methods-strip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+
+    .payment-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $color-text-muted;
+      letter-spacing: 0.05em;
+    }
+
+    .payment-badges-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      .payment-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px;
+        border-radius: $radius-sm;
+        background: #FFFFFF;
+        border: 1px solid rgba(154, 107, 60, 0.18);
+        box-shadow: 0 2px 6px rgba(84, 60, 35, 0.04);
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: $color-heading;
+        transition: transform $transition-fast, border-color $transition-fast;
+
+        &:hover {
+          transform: translateY(-2px);
+          border-color: $color-gold-light;
+        }
+
+        .badge-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+          color: $color-gold-dark;
+
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  // Copyright Text
+  .footer-copyright {
+    font-size: 0.82rem;
+    color: $color-text-muted;
+    line-height: 1.6;
+  }
+}

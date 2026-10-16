@@ -1,0 +1,121 @@
+// =============================================================================
+// VoltEdge - Base Styles, CSS Custom Properties & Reset
+// =============================================================================
+
+:root {
+  --font-arabic: #{$font-arabic};
+  --font-brand: #{$font-brand};
+  --color-bg-canvas: #{$color-bg-canvas};
+  --color-frame-bg: #{$color-frame-bg};
+  --color-card-bg: #{$color-card-bg};
+  --color-card-surface: #{$color-card-surface};
+  --color-heading: #{$color-heading};
+  --color-gold-dark: #{$color-gold-dark};
+  --color-gold-light: #{$color-gold-light};
+  --color-text-main: #{$color-text-main};
+  --color-text-muted: #{$color-text-muted};
+  --color-border: #{$color-border-subtle};
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-glow: #{$shadow-glow};
+  --radius-frame: #{$radius-xl};
+  --radius-card: #{$radius-lg};
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-arabic);
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: #{$breakpoint-tablet}) {
+    padding: 12px 8px;
+  }
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color #{$transition-fast};
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+// Focus Visible accessibility ring
+:focus-visible {
+  outline: 2px solid $color-gold-dark;
+  outline-offset: 3px;
+}
+
+// Frame Container (Outer rounded glassy luxury frame centered on canvas)
+.store-outer-frame {
+  width: 100%;
+  max-width: 1240px;
+  background-color: var(--color-frame-bg);
+  border-radius: var(--radius-frame);
+  box-shadow: 0 30px 70px -15px rgba(74, 53, 32, 0.16), 0 0 0 1px rgba(154, 107, 60, 0.12);
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+// Content constraint wrapper inside the frame
+.content-wrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-inline: 24px;
+
+  @media (max-width: #{$breakpoint-tablet}) {
+    padding-inline: 16px;
+  }
+}
+
+// Reduced Motion Accessibility
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
