@@ -1740,6 +1740,49 @@ input, select, textarea {
   line-height: 1.6;
 }
 
+.site-footer .footer-creator {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(154, 107, 60, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-heading);
+}
+
+.site-footer .footer-creator .creator-name {
+  font-family: var(--font-brand);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #9A6B3C 0%, #C69A5B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.95rem;
+}
+
+.site-footer .footer-creator .creator-sep {
+  color: rgba(154, 107, 60, 0.4);
+  font-weight: 300;
+  padding-inline: 2px;
+}
+
+.site-footer .footer-creator .creator-phone {
+  font-weight: 700;
+  color: #9A6B3C;
+  text-decoration: none;
+  direction: ltr;
+  display: inline-block;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-footer .footer-creator .creator-phone:hover {
+  color: var(--color-heading);
+  transform: translateY(-1px);
+  text-decoration: underline;
+}
+
 /* =========================================================================
    Responsive Breakpoints
    ========================================================================= */

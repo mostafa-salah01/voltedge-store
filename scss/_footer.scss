@@ -156,4 +156,48 @@
     color: $color-text-muted;
     line-height: 1.6;
   }
+
+  // Creator Credit: صنع بواسطة Webstak | 01205798302
+  .footer-creator {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(154, 107, 60, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: $color-heading;
+
+    .creator-name {
+      font-family: var(--font-brand);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      background: $color-gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 0.95rem;
+    }
+
+    .creator-sep {
+      color: rgba(154, 107, 60, 0.4);
+      font-weight: 300;
+      padding-inline: 2px;
+    }
+
+    .creator-phone {
+      font-weight: 700;
+      color: $color-gold-dark;
+      text-decoration: none;
+      direction: ltr;
+      display: inline-block;
+      transition: color $transition-fast, transform $transition-fast;
+
+      &:hover {
+        color: $color-heading;
+        transform: translateY(-1px);
+        text-decoration: underline;
+      }
+    }
+  }
 }
